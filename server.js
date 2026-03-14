@@ -5,6 +5,9 @@ const app = express();
 
 app.use(express.json());
 app.use(express.static("public"));
+app.get("/", (req, res) => {
+  res.send("SRM Dashboard API is running");
+});
 
 let context;
 let page;
@@ -172,11 +175,14 @@ async function findEmailField(page) {
       if (await el.count() > 0) return el;
     }
   }
-  if (!attendanceFrame) {
-  return res.json({
-    error: "Attendance frame not found"
-  });
+  for (const frame of frames) {
+  for (const sel of selectors) {
+    const el = frame.locator(sel);
+    if (await el.count() > 0) return el;
+  }
 }
+
+throw new Error("Email field not found");
 
   throw new Error("Email field not found");
 }
@@ -582,6 +588,12 @@ app.get("/attendance", async (req, res) => {
         break;
       }
 
+    }
+
+    if (!attendanceFrame) {
+      return res.json({
+        error: "Attendance frame not found"
+      });
     }
 
     const courses = await attendanceFrame.evaluate(() => {
