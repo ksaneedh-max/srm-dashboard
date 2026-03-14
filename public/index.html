@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Stu-Check</title>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+
+<!-- SPLASH SCREEN -->
+
+<div id="startup">
+
+<h1 class="logo">Stu-Check</h1>
+
+<div class="spinner"></div>
+
+<p>Loading dashboard...</p>
+
+</div>
+
+
+
+<div id="app" class="hidden">
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="nav-left">
+Stu-Check
+</div>
+
+<div class="nav-right">
+
+<button onclick="logout()" class="logoutBtn">
+Logout
+</button>
+
+</div>
+
+</nav>
+
+
+
+<div class="container">
+
+
+<!-- LOGIN -->
+
+<div id="loginSection" class="card login-card">
+
+<h2>Login to SRM</h2>
+
+<input id="email" placeholder="SRM Email">
+
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()" class="primary">
+Login
+</button>
+
+</div>
+
+
+
+<!-- ACTION BUTTONS -->
+
+<div id="actionSection" class="hidden action-bar">
+
+<button onclick="attendance()" class="primary">
+Attendance
+</button>
+
+<button onclick="marks()" class="secondary">
+Marks
+</button>
+
+</div>
+
+
+
+<!-- LOADER -->
+
+<div id="loader" class="hidden center">
+
+<div class="spinner"></div>
+
+</div>
+
+
+
+<!-- RESULT AREA -->
+
+<div id="result" class="grid"></div>
+
+
+</div>
+
+</div>
+
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
