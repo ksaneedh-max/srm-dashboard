@@ -20,7 +20,7 @@ START PERSISTENT BROWSER
 async function startBrowser() {
 
   context = await chromium.launchPersistentContext("./user-data", {
-    headless: true,
+    headless: false,
     slowMo: 80,
     args: [
   "--no-sandbox",
