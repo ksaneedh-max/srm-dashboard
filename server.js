@@ -19,7 +19,6 @@ async function startBrowser() {
   context = await chromium.launchPersistentContext("./user-data", {
     headless: true,
     slowMo: 80,
-    executablePath: "/usr/bin/chromium-browser",
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
